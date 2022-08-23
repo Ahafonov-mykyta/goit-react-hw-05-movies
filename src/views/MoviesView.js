@@ -29,10 +29,11 @@ export default function MoviesView(){
     }
           
     useEffect(()=>{
-        if(queryUrl === ""){
-            return;
-        }
-        fetchQueryFilm().then(data =>  {console.log(data); setFilms(data.results)}).catch((error) => console.log(error));
+
+      if(queryUrl === ""){
+        return;
+    }
+        fetchQueryFilm().then(data =>   setFilms(data.results)).catch((error) => console.log(error));
     }, [searchParams] )
 
     return (
